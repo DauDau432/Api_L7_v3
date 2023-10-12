@@ -2,8 +2,8 @@ const net = require('net');
 const exec = require('child_process').execSync;
 
 const socket_port = 3000; // cổng API
-const socket_token = "SECRET_TOKEN"; //mã thông báo bí mật của bạn để bảo vệ kết nối TCP
-const allowed_ips = ['1.1.1.1']; // IP máy chủ API
+const socket_token = "daukute432000"; //mã thông báo bí mật của bạn để bảo vệ kết nối TCP
+const allowed_ips = ['42.96.0.125']; // IP máy chủ API
 
 const server = net.createServer((socket) => {
 
