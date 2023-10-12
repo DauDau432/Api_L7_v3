@@ -1,6 +1,6 @@
 {
     "database": {
-        "host": "42.96.0.125",
+        "host": "192.53.114.92",
         "user": "sql_l7_daukute_us",
         "password": "sql_l7_daukute_us",
         "database": "sql_l7_daukute_us"
