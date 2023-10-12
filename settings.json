@@ -1,11 +1,11 @@
 {
     "database": {
-        "host": "localhost",
-        "user": "DATABASE_USER",
-        "password": "DATABASE_PASSWORD",
-        "database": "DATABASE_NAME"
+        "host": "42.96.0.125",
+        "user": "sql_l7_daukute_us",
+        "password": "sql_l7_daukute_us",
+        "database": "sql_l7_daukute_us"
     },
-    "socket_token": "SECRET_TOKEN",
-    "max_attacksn": 15,
+    "socket_token": "daukute432000",
+    "max_attacksn": 2,
     "api_port": 3000
 }
