@@ -3,7 +3,7 @@ const exec = require('child_process').execSync;
 
 const socket_port = 3000; // cổng API
 const socket_token = "daukute432000"; //mã thông báo bí mật của bạn để bảo vệ kết nối TCP
-const allowed_ips = ['42.96.0.125']; // IP máy chủ API
+const allowed_ips = ['192.53.114.92']; // IP máy chủ API
 
 const server = net.createServer((socket) => {
 
