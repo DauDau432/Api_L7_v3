@@ -134,10 +134,10 @@ wget https://raw.githubusercontent.com/DauDau432/Api_L7_Manager/main/client.js
 
 ### khởi động
 ```
-screen -S APIv3 -dm node api.js
+screen -S APIv3 -dm node api.js && screen -r APIv3
 ```
 ```
-screen -S CLIENT -dm node client.js
+screen -S CLIENT -dm node client.js && screen -r CLIENT
 ```
 ### Proxy ngược
 
