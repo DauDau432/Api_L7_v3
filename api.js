@@ -93,7 +93,7 @@ app.get('/api/attack', async (req, res) => {
 
             return res.json({
                 status: 500,
-                message: 'không thể bắt đầu cuộc tấn công',
+                message: 'không thể gửi yêu cầu tấn công',
             });
         }
 
@@ -104,7 +104,7 @@ app.get('/api/attack', async (req, res) => {
 
         return res.json({
             status: 200,
-            message: 'cuộc tấn công bắt đầu thành công',
+            message: 'gửi yêu cầu tấn công thành công',
             id: attack_id,
             elapsed_time: elapsedTimeMs.toFixed(2) + "ms",
             data: {
@@ -120,7 +120,7 @@ app.get('/api/attack', async (req, res) => {
 
         return res.json({
             status: 200,
-            message: 'không thể bắt đầu cuộc tấn công',
+            message: 'không thể gửi yêu cầu tấn công',
         });
     }
 
@@ -263,7 +263,7 @@ app.get('/api/status', async (req, res) => {
 
 });
 
-app.listen(api_port, () => console.log(`API socket Layer7 đã bắt đầu trên cổng ${api_port}`));
+app.listen(api_port, () => console.log(`API socket Layer7 đã chạy trên cổng ${api_port}`));
 
 function sendData(serverName, data) {
     return new Promise((resolve, reject) => {
