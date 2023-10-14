@@ -7,5 +7,5 @@
     },
     "socket_token": "daukute432000",
     "max_attacksn": 2,
-    "api_port": 3000
+    "api_port": 8888
 }
