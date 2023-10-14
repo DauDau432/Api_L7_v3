@@ -1,7 +1,8 @@
-<h2>Trình quản lý API NodeJS cho các cuộc tấn công Lớp 7</h2>
+<h2>Trình quản lý API v3 NodeJS cho các cuộc tấn công Lớp 7</h2>
 
 <h4>API này rất an toàn và nhanh chóng (mất 2 lần ping giữa API và phần phụ trợ, tức là ping là 60ms, sẽ chỉ mất 120ms để khởi động cuộc tấn công)</h4>
 
+<h4>Ưu điểm hơn bản v2 có thể xem được status quản lý và dừng được toàn bộ các cuộc tấn công của tất cả máy chủ đang chạy</h4>
 <h1>Cài đặt: trên centos</h1>
 
 ***cài đặt nodejs***
